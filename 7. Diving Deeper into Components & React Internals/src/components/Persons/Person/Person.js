@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 
+import Auxx from '../../../hoc/Auxx';
+import withClass from '../../../hoc/WithClass';
 import classes from './Person.css';
+import PropTypes from 'prop-types';
 
-const person = props => {
-  return (
-    <div className={classes.Person}>
-      <p onClick={props.click}>
-        I'm {props.name} and I am {props.age} years old!
-      </p>
-      <p>{props.children}</p>
-      <input type="text" onChange={props.changed} value={props.name} />
-    </div>
-  );
-};
+class Person extends Component {
+  render() {
+    console.log('[Person.js] rendering...');
+    return (
+      <Auxx>
+        <p onClick={this.props.click}>
+          I'm {this.props.name} and I am {this.props.age} years old!
+        </p>
+        <p key="i2">{this.props.children}</p>
+        <input
+          key="i3"
+          type="text"
+          onChange={this.props.changed}
+          value={this.props.name}
+        />
+      </Auxx>
+    );
+  }
+}
 
-export default person;
+Person.propTypes = {
+  click: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  changed: PropTypes.func
+}
+
+export default withClass(Person, classes.Person);
