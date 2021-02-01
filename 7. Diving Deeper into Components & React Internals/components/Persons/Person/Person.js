@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Auxx from '../../../hoc/Auxx';
+import Aux from '../../../hoc/Aux';
 import withClass from '../../../hoc/WithClass';
 import classes from './Person.css';
 import AuthContext from '../../../context/auth-context';
@@ -23,7 +23,7 @@ class Person extends Component {
   render() {
     console.log('[Person.js] rendering...');
     return (
-      <Auxx>
+      <Aux>
         {this.context.authenticated ? (
           <p>Authenticated!</p>
         ) : (
@@ -42,7 +42,7 @@ class Person extends Component {
           onChange={this.props.changed}
           value={this.props.name}
         />
-      </Auxx>
+      </Aux>
     );
   }
 }

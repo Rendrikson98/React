@@ -4,7 +4,7 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 import withClass from '../hoc/WithClass';
-import Auxx from '../hoc/Auxx';
+import Aux from '../hoc/Aux';
 import AuthContext from '../context/auth-context';
 
 class App extends Component {
@@ -104,7 +104,7 @@ class App extends Component {
     }
 
     return (
-      <Auxx>
+      <Aux>
         <button
           onClick={() => {
             this.setState({ showCockpit: false });
@@ -128,7 +128,7 @@ class App extends Component {
           ) : null}
           {persons}
         </AuthContext.Provider>
-      </Auxx>
+      </Aux>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
