@@ -20,3 +20,9 @@
 .Blog a:hover{
     color: #f1923f;
 }
+
+.Blog a.active{
+    color: #f1923f;
+    text-decoration: underline;
+}
+
