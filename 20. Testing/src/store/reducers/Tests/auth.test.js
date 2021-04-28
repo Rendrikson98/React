@@ -1,5 +1,5 @@
-import reducer from './auth';
-import * as actionsType from '../actions/actionTypes';
+import reducer from '../auth';
+import * as actionsType from '../../actions/actionTypes';
 
 describe('auth reducer', () => {
     it('should return the initial state', () => {
